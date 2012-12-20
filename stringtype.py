@@ -5,15 +5,14 @@
 
 import re
 
+# sample input data
 strings = ['99.9', '9-16-1983', '11', '42.0', '06-23-1999', 'bluesteel techology', '9115']
 
 def bluesteel(pattern, input):
     match = re.search(pattern, input)
     if match:
-        # print "Found match: " + match.group() + ", Type: Float")
         return True
     else:
-        # print "String."
         return False
 
 
@@ -34,10 +33,10 @@ if __name__ == '__main__':
             print "int"
         
         # detect string type (any other data)
-        #elif bluesteel(r'.+', strings[x]):
-        #    print "text"
-        
-        else:
-            #print "Fell through."
+        elif bluesteel(r'.+', strings[x]):
             print "text"
+        
+        # false/empty string
+        else:
+            print "Error."
 
