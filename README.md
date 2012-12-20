@@ -1,5 +1,5 @@
-dailprogrammer
-==============
+dailyprogrammer
+===============
 
 Solutions to the programming practice challenges at /r/dailyprogrammer 
 on Reddit.
