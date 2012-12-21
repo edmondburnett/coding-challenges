@@ -10,9 +10,9 @@ strings = ['99.9', '9-16-1983', '11', '42.0', '06-23-1999', 'bluesteel techology
 
 # regular expression patterns
 float_pattern = "\d\.\d"
-date_pattern  = "\d+\-\d+\-\d\d+"
+date_pattern  = "\d*\-\d*\-\d\d*"
 int_pattern   = "\d+$"
-text_pattern  = ".+"
+text_pattern  = ".*"
 
 
 def bluesteel(num):
