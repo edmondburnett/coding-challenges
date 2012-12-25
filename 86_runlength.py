@@ -1,6 +1,6 @@
 #!/usr/bin/python2
 
-# Challenge #86: Run-length encoding
+# Challenge #86 [easy] Run-length encoding
 
 import re
 

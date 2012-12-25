@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 
-# Challenge #87: Rectangle Intersection
+# Challenge #87 [easy] Rectangle Intersection
 
 rect1 = [3, 3, 10, 10]
 rect2 = [6, 6, 12, 12]

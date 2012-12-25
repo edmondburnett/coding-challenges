@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 
-# Challenge #113: String-type checking
+# Challenge #113 [easy] String-type checking
 # variant/solution #2
 
 import re
