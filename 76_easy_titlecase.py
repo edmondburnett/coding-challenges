@@ -16,7 +16,6 @@ def titlecase(phrase, exceptions):
             print(phrase_list[i].capitalize()),
         else: 
             print(phrase_list[i].lower()),
-        if i == phrase_list[-1]: print " "
 
 
 titlecase(phrase, exceptions)
