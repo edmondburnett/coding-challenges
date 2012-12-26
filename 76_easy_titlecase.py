@@ -7,6 +7,9 @@ exceptions = ['jumps', 'the', 'over']
 
 
 def titlecase(phrase, exceptions):
+    """
+    Accept a string and list of exceptions, then output a title-cased result.
+    """
     phrase_list = phrase.split()
     for i in range(len(phrase_list)):
         if phrase_list[i] not in exceptions or i == 0:
