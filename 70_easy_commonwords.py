@@ -3,7 +3,7 @@
 # Challenge #70 [easy] Most common words in a file
 
 def wordcount(filename):
-    """ Accept a filename and paramater n, return n most common words """
+    """ Accept a filename, return dict of words and their occurance count """
     wordlist = open(filename, 'r').read().split()
 
     results = {}
@@ -17,9 +17,11 @@ def wordcount(filename):
     return results
 
 
-def printwords(list, n):
+def topwords(filename, n):
+    """ Build a sorted list from wordcount() and print n most used words """
+    sorted_list = sorted(wordcount(filename).iteritems(), key=lambda item: -item[1])
     count = 0
-    for key,value in newlist:
+    for key,value in sorted_list:
         if count < n:
             print key,value
             count += 1
@@ -27,13 +29,4 @@ def printwords(list, n):
             break
 
 
-newlist = sorted(wordcount('loremipsum.txt', 10).iteritems(), \
-        key=lambda item: -item[1])
-
-count = 0
-for key,value in newlist:
-    if count < 10:
-        print key,value
-        count += 1
-    else:
-        break
+topwords('loremipsum.txt', 10)
