@@ -45,5 +45,5 @@ if __name__ == '__main__':
     hexchars = hexconvert('117_easy_hexdump.py')
     stuff = linecounter(hexchars)
 
-    for x in hexlines(stuff, hexchars):
-        print x
+    for line in hexlines(stuff, hexchars):
+        print line
