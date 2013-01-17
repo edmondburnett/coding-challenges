@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 # Challenge #117 [easy] Hexdump to ASCII
 # http://redd.it/16jiuq
 
@@ -7,11 +9,10 @@ def hexconvert(filename):
     file = open(filename, 'r')
     while file:
         try:
-            stuff = hex(ord(file.read(1)))[2:]
-            if len(stuff) == 1:
-                stuff = '0' + stuff
-            #hexlist.append(hex(ord(file.read(1)))[2:])
-            hexlist.append(stuff)
+            hexbyte = hex(ord(file.read(1)))[2:]
+            if len(hexbyte) == 1:
+                hexbyte = '0' + hexbyte
+            hexlist.append(hexbyte)
         except TypeError:
             break
     return hexlist
@@ -21,10 +22,10 @@ def linecounter(bytelist):
     """ Return a list of formatted line numbers """
     linecount = 0
     result = []
-    for charcount, char in enumerate(bytelist):
+    for charcount,char in enumerate(bytelist):
         if (charcount % 16) == 0:
             linecount += 1
-            result.append(hex(linecount)[2:])
+            result.append(hex(linecount)[2:].zfill(8))
     return result
 
 
@@ -41,7 +42,7 @@ def hexlines(linenumbers, bytelist):
 
 
 if __name__ == '__main__':
-    hexchars = hexconvert('README.md')
+    hexchars = hexconvert('117_easy_hexdump.py')
     stuff = linecounter(hexchars)
 
     for x in hexlines(stuff, hexchars):
