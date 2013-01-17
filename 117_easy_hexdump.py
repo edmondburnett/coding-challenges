@@ -3,6 +3,8 @@
 # Challenge #117 [easy] Hexdump to ASCII
 # http://redd.it/16jiuq
 
+import sys, os
+
 def hexconvert(filename):
     """ Accept a filename and return a hex list of it's characters """
     hexlist = []
@@ -42,7 +44,13 @@ def hexlines(linenumbers, bytelist):
 
 
 if __name__ == '__main__':
-    hexchars = hexconvert('117_easy_hexdump.py')
+    if len(sys.argv) > 1 and os.path.exists(sys.argv[1]):
+        filename = sys.argv[1]
+    else:
+        print "Input file not specified or doesn't exist."
+        sys.exit()
+
+    hexchars = hexconvert(filename)
     linenumbers = linecounter(hexchars)
 
     for line in hexlines(linenumbers, hexchars):
