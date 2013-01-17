@@ -2,7 +2,7 @@
 # http://redd.it/16jiuq
 
 def hexconvert(filename):
-    """ Accept a filename and return a list of hex bytes """
+    """ Accept a filename and return a hex list of it's characters """
     hexlist = []
     file = open(filename, 'r')
     while file:
@@ -23,6 +23,24 @@ def linecounter(bytelist):
             result.append(hex(linecount)[2:])
     return result
 
+
+def hexlines(linenumbers, bytelist):
+    """ Combine line #'s and hex bytes into list of formatted output strings """
+    newlist = []
+    for line in range(len(linenumbers)):
+        newlist.append(linenumbers[line])
+        hexend = (line+1)*16
+        for char in bytelist[line*16:hexend]:
+            newlist.append(char)
+        # currentline = bytelist[x*16:hexend]
+        # end = []
+        # currentline = []
+        # currentline = bytelist[begin*16:end]
+        # hexbegin += 1
+    return newlist
+
+# for n in linenumbers, concatinate a string of 16 hex bytes
+
 #for charcount,char in enumerate(hexlist):
 #    if (charcount % 16) == 0:
 #        linecount += 1
@@ -32,4 +50,10 @@ def linecounter(bytelist):
 #        hexbegin += 1
 #        print hex(linecount)[2:], currentline
 
-print linecounter(hexconvert('117_easy_hexdump.py'))
+hexchars = hexconvert('README.md')
+print hexchars
+print
+stuff = linecounter(hexchars)
+print stuff
+print
+print hexlines(stuff, hexchars)
