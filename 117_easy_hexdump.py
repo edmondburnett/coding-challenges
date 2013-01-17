@@ -43,7 +43,7 @@ def hexlines(linenumbers, bytelist):
 
 if __name__ == '__main__':
     hexchars = hexconvert('117_easy_hexdump.py')
-    outputlines = linecounter(hexchars)
+    linenumbers = linecounter(hexchars)
 
-    for line in hexlines(outputlines, hexchars):
+    for line in hexlines(linenumbers, hexchars):
         print line
