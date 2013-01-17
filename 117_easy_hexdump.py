@@ -28,16 +28,18 @@ def hexlines(linenumbers, bytelist):
     """ Combine line #'s and hex bytes into list of formatted output strings """
     newlist = []
     for line in range(len(linenumbers)):
-        newlist.append(linenumbers[line])
+        #newlist.append(linenumbers[line])
+        hexstring = str(linemumbers[line])
         hexend = (line+1)*16
         for char in bytelist[line*16:hexend]:
-            newlist.append(char)
+            #newlist.append(char)
+            hexstring = hexstring + ' ' + char
         # currentline = bytelist[x*16:hexend]
         # end = []
         # currentline = []
         # currentline = bytelist[begin*16:end]
         # hexbegin += 1
-    return newlist
+    return hexstring
 
 # for n in linenumbers, concatinate a string of 16 hex bytes
 
