@@ -2,6 +2,9 @@
 
 # Challenge #117 [easy] Hexdump to ASCII
 # http://redd.it/16jiuq
+#
+# Accepts an input filename on the command line, and outputs an ASCII dump of
+# the file's bytes converted to hex/base16, with line numbers also in hex.
 
 import sys, os
 
@@ -48,6 +51,7 @@ if __name__ == '__main__':
         filename = sys.argv[1]
     else:
         print "Input file not specified or doesn't exist."
+        print "Usage: 117_easy_hexdump.py <filename>\n"
         sys.exit()
 
     hexchars = hexconvert(filename)
