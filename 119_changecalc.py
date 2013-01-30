@@ -11,25 +11,17 @@ def change(money):
     """
     getcontext().rounding = ROUND_HALF_UP
     value = int(Decimal(money).quantize(Decimal('0.01')) * 100)
-    print "Quarters: ",
     if value >= 25:
-        print value/25
+        print "Quarters: ", value/25
         value %= 25
-    else: print 0
-    print "Dimes: ",
     if value >= 10:
-        print value/10
+        print "Dimes: ", value/10
         value %= 10
-    else: print 0
-    print "Nickles: ",
     if value >= 5:
-        print value/5
+        print "Nickles: ", value/5
         value %= 5
-    else: print 0
-    print "Pennies: ",
     if value >= 1:
-        print value/1
-    else: print 0
+        print "Pennies: ", value/1
 
 
 if __name__ == '__main__':
