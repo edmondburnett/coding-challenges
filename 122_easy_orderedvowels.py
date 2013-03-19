@@ -4,10 +4,10 @@
 
 def ordered_vowels(filename):
     """ Input a text file containing one word on each line.
-        Return a list of the words which contain all vowels in
-        alphabetical order, non-repeated. """
+        Return a list of the words which contain all vowels in alphabetical
+        order, non-repeated, with vowels defined as A,E,I,O,U,Y. """
     wordlist = open(filename, 'r').read().splitlines()
-    vowels   = ['a', 'e', 'i', 'o', 'u']
+    vowels   = ['a', 'e', 'i', 'o', 'u', 'y']
     result   = []
 
     for word_pos in range(len(wordlist)):
