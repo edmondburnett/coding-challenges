@@ -1,7 +1,5 @@
-dailyprogrammer
-===============
+coding-challenges
+=================
 
-My solutions to the programming practice challenges at /r/dailyprogrammer 
-on Reddit.
-
-http://www.reddit.com/r/dailyprogrammer/
+My solutions to various coding challenges and practice problems found 
+on sites such as /r/dailyprogrammer, Project Euler, Leetcode, etc.
