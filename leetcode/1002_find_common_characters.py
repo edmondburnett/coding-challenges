@@ -9,19 +9,14 @@ You may return the answer in any order.
 """
 
 from typing import List
+from functools import reduce
+from collections import Counter
 
 
 class Solution:
     def commonChars(self, A: List[str]) -> List[str]:
-        charlist = []
-        for word in A:
-            for letter in word:
-                charlist.append(letter)
-        final_list = charlist.copy()
-        for char in charlist:
-            for word in A:
-                final_list = list(filter(lambda x: x in word, final_list))
-        return final_list
+        result = reduce(lambda x, y: x & y, map(lambda x: Counter(x), A))
+        return list(result.elements())
 
 
 if __name__ == "__main__":
@@ -29,3 +24,4 @@ if __name__ == "__main__":
     l2 = ["cool", "lock", "cook"]
     s = Solution()
     print(s.commonChars(l1))
+    print(s.commonChars(l2))
