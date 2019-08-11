@@ -2,3 +2,4 @@ ENV/
 *.swp
 .vscode/
 .mypy_cache/
+__pycache__/
