@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "coding-challenges"
+version = "0.1.0"
+description = ""
+authors = ["edmondburnett <_@edmondburnett.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+urllib3 = "^1.26.4"
+idna = "^3.1"
+chardet = "^4.0.0"
+certifi = "^2020.12.5"
+ipython = "^7.23.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
