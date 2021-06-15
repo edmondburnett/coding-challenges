@@ -13,6 +13,7 @@ certifi = "^2020.12.5"
 ipython = "^7.23.0"
 
 [tool.poetry.dev-dependencies]
+flake8 = "^3.9.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
