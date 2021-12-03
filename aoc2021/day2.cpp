@@ -9,14 +9,19 @@ clang++ -std=c++11 day2.cpp -o day2 && ./day2
 #include <sstream>
 #include <vector>
 
+std::vector<std::string> split_string(std::string* line) {
+    std::istringstream iss(*line);
+    std::vector<std::string> split(std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>());
+    return split;
+}
+
 int part1(std::ifstream* input_stream) {
     std::string line;
     int horiz = 0, depth = 0, amount; 
 
     while(std::getline(*input_stream, line))
     {
-        std::istringstream iss(line);
-        std::vector<std::string> move(std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>());
+        std::vector<std::string> move = split_string(&line);
         amount = std::stoi(move[1]);
     
         if (move[0] == "forward") {
@@ -36,8 +41,7 @@ int part2(std::ifstream* input_stream) {
 
     while(std::getline(*input_stream, line))
     {
-        std::istringstream iss(line);
-        std::vector<std::string> move(std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>());
+        std::vector<std::string> move = split_string(&line);
         amount = std::stoi(move[1]);
     
         if (move[0] == "forward") {
