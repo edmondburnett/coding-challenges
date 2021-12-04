@@ -51,7 +51,7 @@ int part2(std::ifstream* input_stream) {
             aim += amount;
         } else if (move[0] == "up") {
             aim -= amount;
-        } 
+        }
     }
     return horiz * depth;
 }
