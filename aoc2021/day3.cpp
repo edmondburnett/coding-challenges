@@ -13,6 +13,7 @@ clang++ -std=c++11 day3.cpp -o day3 && ./day3
 int part1(std::ifstream* input) {
     const int b = 12;
     std::vector<std::bitset<b>> binaries;
+    std::bitset<b> gamma, epsilon;
     std::string line;
 
     while(std::getline(*input, line))
@@ -20,7 +21,6 @@ int part1(std::ifstream* input) {
         binaries.push_back(std::bitset<b>(line));
     }
 
-    std::bitset<b> gamma, epsilon;
     for(int i = b-1; i >= 0; i--)
     {
         int count[2] {0,0};
