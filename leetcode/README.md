@@ -1,4 +1,4 @@
-leetlode
-========
+# leetlode
 
-My solutions to coding problems on [Leetcode](https://leetcode.com).
+My solutions to coding problems on [Leetcode](https://leetcode.com) and [Neetcode](https://neetcode.io).
+
