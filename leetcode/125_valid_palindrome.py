@@ -7,13 +7,16 @@ import re
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        rev = ''.join(reversed(s)).lower().replace(" ", "")
+        if not s:
+            return false
+
+        rev = s[::-1].lower().replace(" ", "")
         rev = re.sub(r'[^a-zA-Z0-9\s]', '', rev)
-        if ''.join(reversed(rev)) == rev:
+        if rev[::-1] == rev:
             return True
         return False
 
 if __name__ == '__main__':
     sol = Solution()
-    print(sol.isPalindrome("Was it a car or a cat I saw?"))
-    print(sol.isPalindrome("tab a cat"))
+    print(sol.isPalindrome("Was it a car or a cat I saw?"))  # True
+    print(sol.isPalindrome("tab a cat"))  # False
