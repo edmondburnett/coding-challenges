@@ -11,7 +11,7 @@ class Solution:
             return false
 
         rev = s[::-1].lower().replace(" ", "")
-        rev = re.sub(r'[^a-zA-Z0-9\s]', '', rev)
+        rev = re.sub(r'[^a-zA-Z0-9]', '', rev)
         if rev[::-1] == rev:
             return True
         return False
