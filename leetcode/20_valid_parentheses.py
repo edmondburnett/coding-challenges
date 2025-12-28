@@ -3,6 +3,8 @@
 # https://leetcode.com/problems/valid-parentheses/description/
 # https://neetcode.io/problems/validate-parentheses/question?list=blind75
 
+# Solution is O(n) linear time complexity
+
 
 class Solution:
     @classmethod
