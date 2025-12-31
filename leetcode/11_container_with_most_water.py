@@ -21,6 +21,7 @@ class Solution:
             if area > max_area:
                 max_area = area
 
+            # move the pointer/index for the shorter value inward, so the "water" doesn't overflow
             if heights[left] < heights[right]:
                 left = left + 1
             else:
