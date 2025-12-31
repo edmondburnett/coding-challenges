@@ -19,8 +19,7 @@ class Solution:
             width = right - left
 
             area = height * width
-            if area > max_area:
-                max_area = area
+            max_area = max(max_area, area)
 
             # move the pointer/index for the shorter value inward
             if heights[left] < heights[right]:
@@ -35,3 +34,4 @@ if __name__ == "__main__":
     assert Solution.maxArea([1,7,2,5,4,7,3,6]) == 36
     assert Solution.maxArea([2,2,2]) == 4
     assert Solution.maxArea([1,8,6,2,5,4,8,3,7]) == 49
+    print("All test cases passed!")
