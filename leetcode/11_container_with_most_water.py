@@ -14,6 +14,7 @@ class Solution:
         max_area = 0
 
         while left < right:
+            # get the height from the smaller of the two values, so the "water" doesn't overflow
             height = min(heights[left], heights[right])
             width = right - left
 
@@ -21,7 +22,7 @@ class Solution:
             if area > max_area:
                 max_area = area
 
-            # move the pointer/index for the shorter value inward, so the "water" doesn't overflow
+            # move the pointer/index for the shorter value inward
             if heights[left] < heights[right]:
                 left = left + 1
             else:
