@@ -1,19 +1,14 @@
-[tool.poetry]
+[project]
 name = "coding-challenges"
 version = "0.1.0"
 description = ""
 authors = ["edmondburnett <_@edmondburnett.com>"]
+requires-python = ">=3.13.7, <3.14"
 
-[tool.poetry.dependencies]
-python = "^3.9"
-idna = "^3.1"
-chardet = "^4.0.0"
-certifi = "^2022.12.7"
-ipython = "^7.23.0"
-
-[tool.poetry.dev-dependencies]
-flake8 = "^3.9.2"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[dependency-groups]
+dev = [
+    "basedpyright>=1.36.2",
+    "ipython>=9.8.0",
+    "neovim>=0.3.1",
+    "ruff>=0.14.10",
+]

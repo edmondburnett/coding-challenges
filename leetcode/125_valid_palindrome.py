@@ -6,12 +6,11 @@
 import re
 
 
-
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         """Reverse and compare solution: O(n)"""
         rev = s[::-1].lower().replace(" ", "")
-        rev = re.sub(r'[^a-zA-Z0-9]', '', rev)
+        rev = re.sub(r"[^a-zA-Z0-9]", "", rev)
         if rev[::-1] == rev:
             return True
         return False
@@ -40,18 +39,18 @@ class Solution:
 
         return True
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     sol = Solution()
-    assert sol.isPalindrome("Was it a car or a cat I saw?") == True
-    assert sol.isPalindrome("tab a cat") == False
-    
-    assert sol.isPalindrome2("Was it a car or a cat I saw?") == True
-    assert sol.isPalindrome2("tab a cat") == False
-    assert sol.isPalindrome2("") == True
-    assert sol.isPalindrome2("a") == True
-    assert sol.isPalindrome2("A man, a plan, a canal: Panama") == True
-    assert sol.isPalindrome2("race a car") == False
-    assert sol.isPalindrome2("a,,a") == True
+    assert sol.isPalindrome("Was it a car or a cat I saw?") is True
+    assert sol.isPalindrome("tab a cat") is False
+
+    assert sol.isPalindrome2("Was it a car or a cat I saw?") is True
+    assert sol.isPalindrome2("tab a cat") is False
+    assert sol.isPalindrome2("") is True
+    assert sol.isPalindrome2("a") is True
+    assert sol.isPalindrome2("A man, a plan, a canal: Panama") is True
+    assert sol.isPalindrome2("race a car") is False
+    assert sol.isPalindrome2("a,,a") is True
 
     print("All test cases passed!")
-
