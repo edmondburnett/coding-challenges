@@ -22,11 +22,13 @@ class Solution:
         right = len(s) - 1
 
         while left < right:
+            # skip non-alphanumeric chars from each direction
             while left < right and not s[left].isalnum():
                 left = left + 1
             while left < right and not s[right].isalnum():
                 right = right - 1
 
+            # don't allow the pointers to cross
             if left >= right:
                 break
 
@@ -49,6 +51,7 @@ if __name__ == '__main__':
     assert sol.isPalindrome2("a") == True
     assert sol.isPalindrome2("A man, a plan, a canal: Panama") == True
     assert sol.isPalindrome2("race a car") == False
+    assert sol.isPalindrome2("a,,a") == True
 
     print("All test cases passed!")
 
