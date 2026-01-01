@@ -9,7 +9,7 @@ import re
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        """Reverse and compare solution O(n)"""
+        """Reverse and compare solution"""
         rev = s[::-1].lower().replace(" ", "")
         rev = re.sub(r'[^a-zA-Z0-9]', '', rev)
         if rev[::-1] == rev:
@@ -17,7 +17,7 @@ class Solution:
         return False
 
     def isPalindrome2(self, s: str) -> bool:
-        """Two-Pointer solution O(1)"""
+        """Two-Pointer solution"""
         left = 0
         right = len(s) - 1
 
