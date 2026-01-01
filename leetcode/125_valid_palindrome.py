@@ -22,7 +22,7 @@ class Solution:
         right = len(s) - 1
 
         while left < right:
-            # skip non-alphanumeric chars from each direction
+            # skip non-alphanumeric chars from each direction and prevent crossing pointers while skipping
             while left < right and not s[left].isalnum():
                 left = left + 1
             while left < right and not s[right].isalnum():
