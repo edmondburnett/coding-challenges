@@ -5,18 +5,50 @@
 
 import re
 
+
+
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        if not s:
-            return false
-
+        """Reverse and compare solution O(n)"""
         rev = s[::-1].lower().replace(" ", "")
         rev = re.sub(r'[^a-zA-Z0-9]', '', rev)
         if rev[::-1] == rev:
             return True
         return False
 
+    def isPalindrome2(self, s: str) -> bool:
+        """Two-Pointer solution O(1)"""
+        left = 0
+        right = len(s) - 1
+
+        while left < right:
+            while left < right and not s[left].isalnum():
+                left = left + 1
+            while left < right and not s[right].isalnum():
+                right = right - 1
+
+            if left >= right:
+                break
+
+            if s[left].lower() != s[right].lower():
+                return False
+
+            left = left + 1
+            right = right - 1
+
+        return True
+
 if __name__ == '__main__':
     sol = Solution()
-    print(sol.isPalindrome("Was it a car or a cat I saw?"))  # True
-    print(sol.isPalindrome("tab a cat"))  # False
+    assert sol.isPalindrome("Was it a car or a cat I saw?") == True
+    assert sol.isPalindrome("tab a cat") == False
+    
+    assert sol.isPalindrome2("Was it a car or a cat I saw?") == True
+    assert sol.isPalindrome2("tab a cat") == False
+    assert sol.isPalindrome2("") == True
+    assert sol.isPalindrome2("a") == True
+    assert sol.isPalindrome2("A man, a plan, a canal: Panama") == True
+    assert sol.isPalindrome2("race a car") == False
+
+    print("All test cases passed!")
+
