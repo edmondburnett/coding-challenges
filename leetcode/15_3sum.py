@@ -27,11 +27,8 @@ class Solution:
                 else:
                     result.append([a, nums[left], nums[right]])
                     left = left + 1
-                    right = right - 1
                     while left < right and nums[left] == nums[left - 1]:
                         left = left + 1
-                    while right > left and nums[right] == nums[right + 1]:
-                        right = right - 1
         return result
 
 
